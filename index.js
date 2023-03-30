@@ -26,4 +26,4 @@ io.on('connection',(socket)=>{//variável que irá ser chamada no index.html
     });//Agora a mensagem enviada pelo cliente(pelo index.html) vai ser impressa no terminal
 });
 
-io.emit('some event',{someProperty: 'some value', otherProperty:'other value'});//método para envio da mensagem para todos
+//io.emit('some event',{someProperty: 'some value', otherProperty:'other value'});//método para envio da mensagem para todos
