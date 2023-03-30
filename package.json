@@ -1,0 +1,9 @@
+{
+   "name": "chat-simples-aprendizado",
+   "version": "0.0.1",
+   "description": "Chat de aprendizado do socket io",
+   "dependencies": {
+      "express": "^4.18.2",
+      "socket.io": "^4.6.1"
+   }
+}
