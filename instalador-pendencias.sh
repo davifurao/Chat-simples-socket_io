@@ -1,7 +1,7 @@
 #!bin/bash
 
 
-# Verifica a instalação do socket io e express
+#Verifica a instalação do socket io e express
 if [ -d "./node_modules/express" ]
 then
     echo "O express já está instalado"
