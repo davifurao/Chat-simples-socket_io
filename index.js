@@ -7,8 +7,8 @@ const server = http.createServer(app);//cria um servidor http com o express(para
 const port = 3000;
 
 app.get('/',(req,res)=>{//é definido um manipulador de rotas(método que é executado quando a rota / é chamada)
-    //Ao ser feito um request para o servidor express, é enviado um response com essa mensagem(response) com a mensagem abaixo
-    res.send('<h1>Faaaaaaaaala</h1>');
+    //Ao ser feito um request para o servidor express, é enviado o arquivo index.html
+    res.sendFile(__dirname+'/index.html');
 });
 
 server.listen(port,()=>{//outra função que faz com que o servidor escute na porta 3000
