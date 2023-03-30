@@ -20,6 +20,10 @@ server.listen(port,()=>{//outra função que faz com que o servidor escute na po
 })
 
 
-io.on('connection',(socket)=>{
+io.on('connection',(socket)=>{//variável que irá ser chamada no index.html
     console.log('Um usuário conectado');
-});//variável que irá ser chamada no index.html
+    socket.on('disconnect',()=>{//função de desconexão(caso o socket esteja vazio/livre). 
+        //quando um usuário se desconecta o socket não fica mais reservado, então irá chegar nessa parte da função
+        console.log('Um usuário desconectado');
+    });
+});
