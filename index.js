@@ -5,6 +5,9 @@ const app = express();//associa o express(que foi pego dentro de node_modules) �
 const http = require('http');//pega de node_modules o módulo http 
 const server = http.createServer(app);//cria um servidor http com o express(parametro desse método)
 const port = 3000;
+const {Server} = require("socket.io");//é a mesma coisa de import { Server } from "socket.io";
+const io = new Server(server);//cria um objeto io, passando server como atributo
+
 
 app.get('/',(req,res)=>{//é definido um manipulador de rotas(método que é executado quando a rota / é chamada)
     //Ao ser feito um request para o servidor express, é enviado o arquivo index.html
@@ -15,3 +18,8 @@ server.listen(port,()=>{//outra função que faz com que o servidor escute na po
     //OBS: O servidor, reiterando, é o servidor http com express.
     console.log('listening on *:3000');
 })
+
+
+io.on('connection',(socket)=>{
+    console.log('Um usuário conectado');
+});//variável que irá ser chamada no index.html
