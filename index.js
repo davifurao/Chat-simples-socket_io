@@ -21,9 +21,9 @@ server.listen(port,()=>{//outra função que faz com que o servidor escute na po
 
 
 io.on('connection',(socket)=>{//variável que irá ser chamada no index.html
-    console.log('Um usuário conectado');
-    socket.on('disconnect',()=>{//função de desconexão(caso o socket esteja vazio/livre). 
-        //quando um usuário se desconecta o socket não fica mais reservado, então irá chegar nessa parte da função
-        console.log('Um usuário desconectado');
-    });
+    socket.on('chat mesage',(msg)=>{
+        io.emit('chat message',msg);
+    });//Agora a mensagem enviada pelo cliente(pelo index.html) vai ser impressa no terminal
 });
+
+io.emit('some event',{someProperty: 'some value', otherProperty:'other value'});//método para envio da mensagem para todos
